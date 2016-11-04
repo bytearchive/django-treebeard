@@ -58,10 +58,12 @@ any problems.
 
 ### Multiple tree roots
 
-Currently django-treebeard does not offer any functionality to handle more than one root. This has
-to be implemented by the model inheriting from ``treebeard.mp_tree.MP_Node``. If one has the need
-to implement this, an additional field has to be added in order to distinguish the different roots.
-Currently, when adding a child to an existing node, the value of this field must be copied from the
+Currently django-treebeard does not offer any functionality to handle more than one root. If one wants
+to support more than one root, he must add another field to the model implementing his model, which
+inherits from ``treebeard.mp_tree.MP_Node``.
+
+This additional field has to be added in order to distinguish the different roots. Currently, when
+adding a child to an existing node, the value of this field must be copied from the
 parent node to it's child. In a future version of treebeard, this operation should be performed by
 the existing ``add_child()`` method in a transparent manner.
 
