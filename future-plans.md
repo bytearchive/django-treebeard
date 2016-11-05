@@ -5,8 +5,7 @@ Tropashko in SQL Design Patterns. Materialized Path is probably the fastest way 
 trees in SQL without the need of extra work in the database, like Oracle’s ``CONNECT BY`` or sprocs
 and triggers for nested intervals.
 
-For reasons unknown to the community, Gustavo Picón, the maintainer of django-treebeard needs
-help to maintain the project.
+Gustavo Picón, the maintainer of django-treebeard needs help to maintain the project.
 
 Furthermore, the website containing the documentation of the project, is not running stable.
 Hosting it on [Read the Docs](https://readthedocs.org/) would probably be a better idea.
