@@ -5,28 +5,19 @@ Tropashko in SQL Design Patterns. Materialized Path is probably the fastest way 
 trees in SQL without the need of extra work in the database, like Oracle’s ``CONNECT BY`` or sprocs
 and triggers for nested intervals.
 
-For reasons unknown to the community, Gustavo Picón, the maintainer of django-treebeard stopped
-to work on this project. The [latest version available from PyPI is 4.0.1](https://pypi.python.org/pypi/django-treebeard),
-is not compatible with Django-1.10 although pull requests have been made available by third parties.
+For reasons unknown to the community, Gustavo Picón, the maintainer of django-treebeard needs
+help to maintain the project.
 
-Furthermore, the website containing the documentation of the project, is down quite often
-and apparently he has no intention to host it on [Read the Docs](https://readthedocs.org/).
+Furthermore, the website containing the documentation of the project, is not running stable.
+Hosting it on [Read the Docs](https://readthedocs.org/) would probably be a better idea.
 
 I also would prefer to run the unit test suite on a public service such as Travis-CI rather than
 a private Jenkins installation.
 
 This is a major problem for the Django community, since this implementation is used widely to
 implement hierarchical trees in relational databases, for instance the pages and plugin models in
-django-CMS. Relying on software whose documentation is not always available can be a major issue.
-
-
-## Proposal to fork and rename django-treebeard
-
-Therefore I'm proposing to fork this project, rename it and publish it on PyPI under a different
-name.
-
-The first version shall be compatible with the current version of django-treebeard. Later on we
-might add additional functionality.
+django-CMS, Wagtail, django-oscar and many more. Relying on software whose documentation is not
+always available, can be a major issue.
 
 
 ## Proposal for further improvement
@@ -50,7 +41,7 @@ therefore would propose to create a mixin class, which can be added to existing 
 ### Allow to override field names
 
 Currently, models inheriting from ``treebeard.mp_tree.MP_Node`` have three hard coded fields:
-`` path``, ``depth`` and ``numchild``. Combining this with existing model definitions can lead to
+`` path``, ``depth`` and ``numchild``. Combining them with existing model definitions can lead to
 naming conflicts. I therefore suggest to allow the inheriting class to override these three names.
 The inheriting class is responsible for all database migrations anyway, so this should not cause
 any problems.
